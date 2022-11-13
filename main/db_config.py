@@ -4,7 +4,10 @@ from bson import ObjectId
 MONGO_URL = "mongodb://localhost:27017"
 client = motor_asyncio.AsyncIOMotorClient(MONGO_URL)
 database = client.fastapi_hrm
+
 department_collection = database.get_collection("department")
+user_collection = database.get_collection("user")
+employee_collection = database.get_collection("employee")
 
 
 class PyObjectId(ObjectId):
